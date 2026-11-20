@@ -2,18 +2,19 @@
 /**
  * Plugin Name: MCP Capability Extender
  * Description: Direct WooCommerce reporting, product operations, SEO crawling and Google reporting through WordPress abilities.
- * Version: 0.3.0
+ * Version: 1.1
  * Requires at least: 6.9
  * Requires PHP: 8.1
  * Author: SternLabs
  * License: GPL-2.0-or-later
  * License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+ * Domain Path: /languages
  * Text Domain: sternlabs-commerce-seo
  */
 defined('ABSPATH') || exit;
-define('SCI_VERSION', '0.3.0');
+define('SCI_VERSION', '1.1');
 define('SCI_DIR', __DIR__);
-foreach (array('security', 'core', 'catalog', 'reports', 'seo', 'google', 'admin') as $module) {
+foreach (array('security', 'privacy', 'core', 'catalog', 'reports', 'seo', 'google', 'admin') as $module) {
     require_once SCI_DIR . '/includes/class-' . $module . '.php';
 }
 \SternLabs\CommerceSEO\Core::boot();

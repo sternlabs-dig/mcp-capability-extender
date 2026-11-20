@@ -4,17 +4,17 @@ defined('ABSPATH') || exit;
 
 final class SEO {
     public static function register() {
-        Core::ability('seo-page-audit', 'Audit a public page', 'Independent HTML audit of titles, headings, metadata, canonical, robots, images, links, JSON-LD, HTTP redirects and mixed content. Same-origin public URLs only. Does not claim Google index status or browser/Core Web Vitals measurements.', Core::schema(array('url' => Core::field('string', array('format' => 'uri'))), array('url')), array(__CLASS__, 'audit'), 'manage_options');
-        Core::ability('seo-crawl-start', 'Start a bounded site SEO audit', 'Seeds a resumable crawl from published public content and product categories. Follows discovered same-origin links without query strings. Maximum 2000 pages; never a guarantee of exhaustive coverage.', Core::schema(array('max_pages' => Core::field('integer', array('minimum' => 1, 'maximum' => 2000, 'default' => 100)))), array(__CLASS__, 'start'), 'manage_options');
-        Core::ability('seo-crawl-next', 'Continue site SEO audit', 'Fetches up to 3 pages per request. State is retained for 24 hours; rerun until complete. Read-only crawling. WordPress cron is not required.', Core::schema(array('crawl_id' => Core::field('string', array('pattern' => '^[a-f0-9]{32}$'))), array('crawl_id')), array(__CLASS__, 'next'), 'manage_options');
-        Core::ability('seo-crawl-get', 'Read site SEO audit', 'Returns coverage, issues and duplicate-title/description/content candidates, plus paginated page details. Potential orphan detection is limited to crawled pages. Scores are not Google rankings.', Core::schema(array_merge(Core::page_fields(), array('crawl_id' => Core::field('string', array('pattern' => '^[a-f0-9]{32}$')))), array('crawl_id')), array(__CLASS__, 'get'), 'manage_options');
-        Core::ability('seo-site-files', 'Inspect robots.txt and sitemap entry points', 'Fetches robots.txt and known sitemap entry points without modifying them. Reports WordPress search visibility and available SEO integration.', Core::schema(), array(__CLASS__, 'files'), 'manage_options');
-        Core::ability('seo-meta', 'Read saved SEO metadata', 'Reads supported Yoast or Rank Math saved fields, not a ranking score. With no SEO plugin, reports unavailable; crawl rendered output independently.', Core::schema(array('post_id' => Core::field('integer', array('minimum' => 1))), array('post_id')), array(__CLASS__, 'meta'), 'edit_others_posts');
-        Core::ability('seo-meta-update', 'Preview or edit supported SEO metadata', 'Writes saved fields only for active Yoast or Rank Math. No native frontend SEO output is added in this version. Verify rendered page afterward.', Core::schema(array_merge(Core::mutation_fields(), array(
+        Core::ability('seo-page-audit', __('Audit a public page', 'sternlabs-commerce-seo'), __('Independent HTML audit of titles, headings, metadata, canonical, robots, images, links, JSON-LD, HTTP redirects and mixed content. Same-origin public URLs only. Does not claim Google index status or browser/Core Web Vitals measurements.', 'sternlabs-commerce-seo'), Core::schema(array('url' => Core::field('string', array('format' => 'uri'))), array('url')), array(__CLASS__, 'audit'), 'manage_options');
+        Core::ability('seo-crawl-start', __('Start a bounded site SEO audit', 'sternlabs-commerce-seo'), __('Seeds a resumable crawl from published public content and product categories. Follows discovered same-origin links without query strings. Maximum 2000 pages; never a guarantee of exhaustive coverage.', 'sternlabs-commerce-seo'), Core::schema(array('max_pages' => Core::field('integer', array('minimum' => 1, 'maximum' => 2000, 'default' => 100)))), array(__CLASS__, 'start'), 'manage_options');
+        Core::ability('seo-crawl-next', __('Continue site SEO audit', 'sternlabs-commerce-seo'), __('Fetches up to 3 pages per request. State is retained for 24 hours; rerun until complete. Read-only crawling. WordPress cron is not required.', 'sternlabs-commerce-seo'), Core::schema(array('crawl_id' => Core::field('string', array('pattern' => '^[a-f0-9]{32}$'))), array('crawl_id')), array(__CLASS__, 'next'), 'manage_options');
+        Core::ability('seo-crawl-get', __('Read site SEO audit', 'sternlabs-commerce-seo'), __('Returns coverage, issues and duplicate-title/description/content candidates, plus paginated page details. Potential orphan detection is limited to crawled pages. Scores are not Google rankings.', 'sternlabs-commerce-seo'), Core::schema(array_merge(Core::page_fields(), array('crawl_id' => Core::field('string', array('pattern' => '^[a-f0-9]{32}$')))), array('crawl_id')), array(__CLASS__, 'get'), 'manage_options');
+        Core::ability('seo-site-files', __('Inspect robots.txt and sitemap entry points', 'sternlabs-commerce-seo'), __('Fetches robots.txt and known sitemap entry points without modifying them. Reports WordPress search visibility and available SEO integration.', 'sternlabs-commerce-seo'), Core::schema(), array(__CLASS__, 'files'), 'manage_options');
+        Core::ability('seo-meta', __('Read saved SEO metadata', 'sternlabs-commerce-seo'), __('Reads supported Yoast or Rank Math saved fields, not a ranking score. With no SEO plugin, reports unavailable; crawl rendered output independently.', 'sternlabs-commerce-seo'), Core::schema(array('post_id' => Core::field('integer', array('minimum' => 1))), array('post_id')), array(__CLASS__, 'meta'), 'edit_others_posts');
+        Core::ability('seo-meta-update', __('Preview or edit supported SEO metadata', 'sternlabs-commerce-seo'), __('Writes saved fields only for active Yoast or Rank Math. No native frontend SEO output is added in this version. Verify rendered page afterward.', 'sternlabs-commerce-seo'), Core::schema(array_merge(Core::mutation_fields(), array(
             'post_id' => Core::field('integer', array('minimum' => 1)), 'title' => Core::field('string'), 'description' => Core::field('string'),
             'focus_keyword' => Core::field('string'), 'canonical' => Core::field('string'), 'noindex' => Core::field('boolean')
         )), array('post_id')), array(__CLASS__, 'update_meta'), 'edit_others_posts', true);
-        Core::ability('image-alt-update', 'Preview or edit media alt text', 'Updates an image attachment alt field, with permission and stale-record checks.', Core::schema(array_merge(Core::mutation_fields(), array('attachment_id' => Core::field('integer', array('minimum' => 1)), 'alt' => Core::field('string', array('maxLength' => 1000)))), array('attachment_id', 'alt')), array(__CLASS__, 'image_alt'), 'upload_files', true);
+        Core::ability('image-alt-update', __('Preview or edit media alt text', 'sternlabs-commerce-seo'), __('Updates an image attachment alt field, with permission and stale-record checks.', 'sternlabs-commerce-seo'), Core::schema(array_merge(Core::mutation_fields(), array('attachment_id' => Core::field('integer', array('minimum' => 1)), 'alt' => Core::field('string', array('maxLength' => 1000)))), array('attachment_id', 'alt')), array(__CLASS__, 'image_alt'), 'upload_files', true);
     }
     public static function origin($url) {
         $p = wp_parse_url($url); if (!$p || empty($p['host']) || empty($p['scheme'])) { return ''; }
@@ -22,11 +22,11 @@ final class SEO {
     }
     public static function safe_url($url) {
         $url = esc_url_raw($url); $p = wp_parse_url($url);
-        if (!$p || self::origin($url) !== self::origin(home_url('/')) || isset($p['user']) || isset($p['pass']) || !in_array($p['scheme'], array('http', 'https'), true)) { return Core::error('Only the exact home_url origin is allowed.'); }
+        if (!$p || self::origin($url) !== self::origin(home_url('/')) || isset($p['user']) || isset($p['pass']) || !in_array($p['scheme'], array('http', 'https'), true)) { return Core::error(__('Only the exact home_url origin is allowed.', 'sternlabs-commerce-seo')); }
         $path = $p['path'] ?? '/';
         for ($decode = 0; $decode < 3; $decode++) { $decoded = rawurldecode($path); if ($decoded === $path) { break; } $path = $decoded; }
-        if (strpos($path, '\\') !== false || preg_match('~(?:^|/)\.{1,2}(?:/|$)~', $path) || preg_match('/[\x00-\x1f\x7f]/', $path)) { return Core::error('Unsafe public page path.'); }
-        if (preg_match('~(?:^|/)(?:wp-admin|wp-json|wp-login\.php|xmlrpc\.php|wp-cron\.php)(?:/|$)~i', $path) || !empty($p['query'])) { return Core::error('Only public pages without query strings are crawled.'); }
+        if (strpos($path, '\\') !== false || preg_match('~(?:^|/)\.{1,2}(?:/|$)~', $path) || preg_match('/[\x00-\x1f\x7f]/', $path)) { return Core::error(__('Unsafe public page path.', 'sternlabs-commerce-seo')); }
+        if (preg_match('~(?:^|/)(?:wp-admin|wp-json|wp-login\.php|xmlrpc\.php|wp-cron\.php)(?:/|$)~i', $path) || !empty($p['query'])) { return Core::error(__('Only public pages without query strings are crawled.', 'sternlabs-commerce-seo')); }
         return preg_replace('/#.*$/', '', $url);
     }
     public static function absolute($href, $base) {
@@ -46,14 +46,14 @@ final class SEO {
             }
             return array('url' => $valid, 'status' => $status, 'redirects' => $chain, 'response' => $response, 'fetch_seconds' => round(microtime(true) - $started, 3));
         }
-        return Core::error('More than three redirects or redirect loop.', 'sci_redirect_limit');
+        return Core::error(__('More than three redirects or redirect loop.', 'sternlabs-commerce-seo'), 'sci_redirect_limit');
     }
     public static function finding(&$issues, $code, $severity, $evidence, $action) { $issues[] = array('code' => $code, 'severity' => $severity, 'evidence' => $evidence, 'recommendation' => $action); }
     public static function parse_html($html, $url, $status = 200, $robots_header = '') {
-        if (!class_exists('DOMDocument')) { return Core::error('PHP DOM extension is needed for HTML SEO audits.'); }
+        if (!class_exists('DOMDocument')) { return Core::error(__('PHP DOM extension is needed for HTML SEO audits.', 'sternlabs-commerce-seo')); }
         $previous = libxml_use_internal_errors(true); $dom = new \DOMDocument();
         $loaded = $dom->loadHTML('<?xml encoding="utf-8" ?>' . $html, LIBXML_NONET | LIBXML_NOERROR | LIBXML_NOWARNING); libxml_clear_errors(); libxml_use_internal_errors($previous);
-        if (!$loaded) { return Core::error('Page HTML could not be parsed.'); }
+        if (!$loaded) { return Core::error(__('Page HTML could not be parsed.', 'sternlabs-commerce-seo')); }
         $xp = new \DOMXPath($dom); $issues = array();
         $text = function ($query) use ($xp) { $nodes = $xp->query($query); return $nodes && $nodes->length ? trim(preg_replace('/\s+/u', ' ', $nodes->item(0)->textContent)) : ''; };
         $attr = function ($query, $key) use ($xp) { $nodes = $xp->query($query); return $nodes && $nodes->length ? trim($nodes->item(0)->getAttribute($key)) : ''; };
@@ -130,7 +130,7 @@ final class SEO {
         return array('crawl_id' => $id, 'complete' => false, 'queued' => min(count($queue), $max), 'max_pages' => $max, 'next_ability' => 'sternlabs/seo-crawl-next');
     }
     public static function load($id) {
-        $j = get_transient('sci_crawl_' . $id); return (!$j || (int) $j['owner'] !== get_current_user_id()) ? Core::error('Crawl expired or belongs to another user.') : $j;
+        $j = get_transient('sci_crawl_' . $id); return (!$j || (int) $j['owner'] !== get_current_user_id()) ? Core::error(__('Crawl expired or belongs to another user.', 'sternlabs-commerce-seo')) : $j;
     }
     public static function next($in) {
         return Core::lock('crawl-' . $in['crawl_id'], function () use ($in) {
@@ -179,9 +179,9 @@ final class SEO {
         return self::provider() === 'yoast' ? array('title' => '_yoast_wpseo_title', 'description' => '_yoast_wpseo_metadesc', 'focus_keyword' => '_yoast_wpseo_focuskw', 'canonical' => '_yoast_wpseo_canonical', 'noindex' => '_yoast_wpseo_meta-robots-noindex') : array('title' => 'rank_math_title', 'description' => 'rank_math_description', 'focus_keyword' => 'rank_math_focus_keyword', 'canonical' => 'rank_math_canonical_url', 'robots' => 'rank_math_robots');
     }
     public static function meta($in) {
-        if (!get_post($in['post_id']) || !current_user_can('edit_post', $in['post_id'])) { return Core::error('Post not found or access denied.'); }
+        if (!get_post($in['post_id']) || !current_user_can('edit_post', $in['post_id'])) { return Core::error(__('Post not found or access denied.', 'sternlabs-commerce-seo')); }
         $fields = array(); if (self::provider() !== 'none') { foreach (self::keys() as $field => $key) { $fields[$field] = get_post_meta($in['post_id'], $key, true); } }
-        return array('post_id' => $in['post_id'], 'provider' => self::provider(), 'saved_fields' => $fields, 'note' => 'Saved metadata may contain templates. Rendered HTML is the authoritative output.');
+        return array('post_id' => $in['post_id'], 'provider' => self::provider(), 'saved_fields' => $fields, 'note' => __('Saved metadata may contain templates. Rendered HTML is the authoritative output.', 'sternlabs-commerce-seo'));
     }
     public static function content_schema() {
         $schema = Core::schema(array('title' => Core::field('string'), 'description' => Core::field('string'), 'focus_keyword' => Core::field('string')));
@@ -189,14 +189,14 @@ final class SEO {
         return $schema;
     }
     public static function prepare_content($post_id, $input) {
-        if (!current_user_can('edit_others_posts')) { return Core::error('SEO edits require edit_others_posts.', 'sci_seo_access'); }
-        if (!is_array($input) || !$input || array_diff(array_keys($input), array('title', 'description', 'focus_keyword'))) { return Core::error('SEO content accepts only title, description and focus_keyword.'); }
+        if (!current_user_can('edit_others_posts')) { return Core::error(__('SEO edits require edit_others_posts.', 'sternlabs-commerce-seo'), 'sci_seo_access'); }
+        if (!is_array($input) || !$input || array_diff(array_keys($input), array('title', 'description', 'focus_keyword'))) { return Core::error(__('SEO content accepts only title, description and focus_keyword.', 'sternlabs-commerce-seo')); }
         $before = self::meta(array('post_id' => $post_id));
         if (is_wp_error($before)) { return $before; }
-        if ($before['provider'] === 'none') { return Core::error('No supported SEO plugin active. Content-only edits remain available.', 'sci_seo_unavailable'); }
+        if ($before['provider'] === 'none') { return Core::error(__('No supported SEO plugin active. Content-only edits remain available.', 'sternlabs-commerce-seo'), 'sci_seo_unavailable'); }
         $changes = array();
         foreach ($input as $key => $value) {
-            if (!is_string($value)) { return Core::error('SEO content values must be strings.'); }
+            if (!is_string($value)) { return Core::error(__('SEO content values must be strings.', 'sternlabs-commerce-seo')); }
             $changes[$key] = sanitize_text_field($value);
         }
         ksort($changes);
@@ -204,8 +204,8 @@ final class SEO {
     }
     // Shared persistence; callers supply a validated, preview-protected plan.
     public static function persist_meta($post_id, $changes, $provider) {
-        if (!current_user_can('edit_others_posts') || !current_user_can('edit_post', $post_id)) { return Core::error('SEO access denied.', 'sci_seo_access'); }
-        if ($provider === 'none' || $provider !== self::provider()) { return Core::error('SEO provider changed. Generate a fresh preview.', 'sci_stale_preview'); }
+        if (!current_user_can('edit_others_posts') || !current_user_can('edit_post', $post_id)) { return Core::error(__('SEO access denied.', 'sternlabs-commerce-seo'), 'sci_seo_access'); }
+        if ($provider === 'none' || $provider !== self::provider()) { return Core::error(__('SEO provider changed. Generate a fresh preview.', 'sternlabs-commerce-seo'), 'sci_stale_preview'); }
         $keys = self::keys();
         foreach ($changes as $field => $value) {
             if ($field === 'noindex') {
@@ -223,9 +223,9 @@ final class SEO {
     }
     public static function update_meta($in) {
         $before = self::meta($in); if (is_wp_error($before)) { return $before; }
-        if ($before['provider'] === 'none') { return Core::error('No supported SEO plugin active. Independent audits work, but native SEO output is not implemented in this release.'); }
+        if ($before['provider'] === 'none') { return Core::error(__('No supported SEO plugin active. Independent audits work, but native SEO output is not implemented in this release.', 'sternlabs-commerce-seo')); }
         $changes = array(); foreach (array('title', 'description', 'focus_keyword', 'canonical') as $field) {
-            if (isset($in[$field])) { if ($field === 'canonical' && $in[$field] !== '' && !wp_http_validate_url($in[$field])) { return Core::error('Canonical must be a public HTTP(S) URL or empty.'); } $changes[$field] = sanitize_text_field($in[$field]); }
+            if (isset($in[$field])) { if ($field === 'canonical' && $in[$field] !== '' && !wp_http_validate_url($in[$field])) { return Core::error(__('Canonical must be a public HTTP(S) URL or empty.', 'sternlabs-commerce-seo')); } $changes[$field] = sanitize_text_field($in[$field]); }
         }
         if (isset($in['noindex'])) { $changes['noindex'] = $in['noindex']; }
         return Core::mutate('seo-meta-update', $in, array('before' => $before, 'changes' => $changes), function () use ($in, $changes) {
@@ -233,7 +233,7 @@ final class SEO {
         });
     }
     public static function image_alt($in) {
-        if (get_post_type($in['attachment_id']) !== 'attachment' || !wp_attachment_is_image($in['attachment_id']) || !current_user_can('edit_post', $in['attachment_id'])) { return Core::error('Image not found or access denied.'); }
+        if (get_post_type($in['attachment_id']) !== 'attachment' || !wp_attachment_is_image($in['attachment_id']) || !current_user_can('edit_post', $in['attachment_id'])) { return Core::error(__('Image not found or access denied.', 'sternlabs-commerce-seo')); }
         $alt = sanitize_text_field($in['alt']);
         return Core::mutate('image-alt-update', $in, array('id' => $in['attachment_id'], 'before' => get_post_meta($in['attachment_id'], '_wp_attachment_image_alt', true), 'after' => $alt), function () use ($in, $alt) { update_post_meta($in['attachment_id'], '_wp_attachment_image_alt', $alt); return array('attachment_id' => $in['attachment_id'], 'alt' => $alt); });
     }

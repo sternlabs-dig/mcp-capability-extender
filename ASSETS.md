@@ -1,7 +1,7 @@
-# Asset provenance and directory release gate
+# Asset licensing
 
-The bundled `assets/sternlabs-logo.png` is the Stern Labs logo supplied by the repository maintainer for this plugin. It was not fetched from an unrelated image provider.
+Plugin PHP, CSS, JavaScript and documentation are distributed under GPL version 2 or, at your option, any later version. See LICENSE.
 
-Before WordPress.org submission, the maintainer must confirm ownership or redistribution authority and explicitly document a GPL-compatible licence for the bundled image. Branding/trademark rights and copyright licensing are separate questions. This document does not invent an asset licence or grant trademark rights.
+The Stern Labs logo in assets/sternlabs-logo.png was supplied by the maintainer. The maintainer confirmed ownership/distribution authority and authorization to distribute the bundled image under GPL v2 or later in this preparation session. The licence covers the bundled copyrightable image; it does not grant unrelated trademark endorsement rights.
 
-Dashboard CSS and JavaScript were created for the plugin. Assets are loaded locally, only on the plugin's settings page. WordPress supplies Dashicons; it is not redistributed here. No fonts, libraries or dashboard scripts are loaded from a CDN.
+WordPress supplies Dashicons; no separate copy is bundled. Dashboard assets are local and no remote font/script/CDN library is loaded.

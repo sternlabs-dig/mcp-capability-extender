@@ -40,7 +40,8 @@ class ReleasePackagingTests(unittest.TestCase):
 
     def test_inconsistent_release_versions_fail(self):
         path = self.root / 'readme.txt'
-        path.write_text(path.read_text().replace('Stable tag: 0.3.0', 'Stable tag: 99.0.0'))
+        version = builder.collect(self.root)[0]
+        path.write_text(path.read_text().replace('Stable tag: ' + version, 'Stable tag: 99.0.0'))
         with self.assertRaises(ValueError):
             builder.build(self.root)
 

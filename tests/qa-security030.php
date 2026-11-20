@@ -41,4 +41,14 @@ $_POST = array('settings_section' => 'google', 'client_id' => 'fixture-id', 'ga4
 try { Admin::save(); } catch (\RuntimeException $e) { expect($e->getMessage() === 'CE030_REDIRECT', 'reporting form completes'); }
 expect(Core::settings()['allow_writes'] === true && Google::credentials()['client_secret'] === 'fixture-secret' && Google::tokens()['refresh_token'] === 'fixture-refresh', 'Google form retains write setting and blank secrets/tokens');
 $_POST = array();
+expect(Admin::wordpress_org_package('https://downloads.wordpress.org/plugin/woocommerce.10.0.0.zip') === true, 'official WordPress package accepted');
+foreach (array('http://downloads.wordpress.org/plugin/test.zip', 'https://downloads.wordpress.org.evil.test/plugin/test.zip', 'https://evil.test/plugin/test.zip', 'https://user:secret@downloads.wordpress.org/plugin/test.zip', 'https://downloads.wordpress.org:444/plugin/test.zip', 'https://downloads.wordpress.org/plugin/test.zip?token=secret', 'https://downloads.wordpress.org/plugin/test.zip#fragment', 'https://downloads.wordpress.org/theme/test.zip', 'https://downloads.wordpress.org/plugin/../test.zip') as $url) {
+ expect(Admin::wordpress_org_package($url) === false, 'unapproved package URL blocked');
+}
+$_POST = array('client_id' => array('injected'));
+try { Admin::posted('client_id'); expect(false, 'array-valued admin field must be rejected'); }
+catch (\RuntimeException $e) { expect(strpos($e->getMessage(), 'CE030_DIE:') === 0, 'array-valued settings rejected before processing'); }
+$_POST = array('client_secret' => '  literal-special-secret+/:=  ');
+expect(Admin::posted('client_secret') === '  literal-special-secret+/:=  ', 'secret input is not destructively sanitized');
+$_POST = array();
 throw new \RuntimeException('CE030_QA_PASSED assertions=' . $GLOBALS['sci_test_count']);

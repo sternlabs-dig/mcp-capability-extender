@@ -1,0 +1,1356 @@
+# Copyright (C) 2026 SternLabs
+# This file is distributed under the GPL-2.0-or-later.
+msgid ""
+msgstr ""
+"Project-Id-Version: MCP Capability Extender 1.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/github-compliance\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-11-19T13:09:44+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: sternlabs-commerce-seo\n"
+
+#. Plugin Name of the plugin
+#: sternlabs-commerce-seo.php
+#: build/regression.php:74
+#: build/regression.php:1170
+#: includes/class-admin.php:13
+#: includes/class-privacy.php:12
+msgid "MCP Capability Extender"
+msgstr ""
+
+#. Description of the plugin
+#: sternlabs-commerce-seo.php
+msgid "Direct WooCommerce reporting, product operations, SEO crawling and Google reporting through WordPress abilities."
+msgstr ""
+
+#. Author of the plugin
+#: sternlabs-commerce-seo.php
+msgid "SternLabs"
+msgstr ""
+
+#: build/regression.php:14
+#: includes/class-security.php:13
+msgid "Request structure exceeds the safety limit."
+msgstr ""
+
+#: build/regression.php:15
+#: includes/class-security.php:14
+msgid "A request field exceeds the safety limit or contains invalid characters."
+msgstr ""
+
+#: build/regression.php:22
+#: includes/class-security.php:21
+msgid "Request exceeds the safety limit."
+msgstr ""
+
+#: build/regression.php:24
+#: includes/class-security.php:23
+msgid "Request fields do not match the tool schema."
+msgstr ""
+
+#: build/regression.php:31
+#: includes/class-security.php:30
+msgid "Request limit reached. Retry after one minute."
+msgstr ""
+
+#: build/regression.php:75
+#: includes/class-privacy.php:13
+msgid "Suggested text: Review and adapt this description to your actual configuration and AI provider before publishing your site privacy policy."
+msgstr ""
+
+#: build/regression.php:76
+#: includes/class-privacy.php:14
+msgid "Authorized integrations can request product information, sales aggregates and public-page audit results through the site MCP adapter. The requesting AI client and its provider receive the requested results. Access is governed by WordPress user permissions and the site connection credentials. This extension does not install visitor tracking."
+msgstr ""
+
+#: build/regression.php:77
+#: includes/class-privacy.php:15
+msgid "Optional Google connections send OAuth authorization data, selected property identifiers, reporting dates, dimensions and metrics to Google Analytics and Search Console. URL inspection and performance requests send the selected public URL to Google. Requests occur when an authorized user connects an account, disconnects it or requests an operation; token refresh can occur during those requests. Existing tracking, if present on the site, has its own data collection and consent requirements."
+msgstr ""
+
+#: build/regression.php:78
+#: includes/class-privacy.php:16
+msgid "Google credentials and tokens remain stored on the site, encrypted using WordPress salts, until removed or the plugin is uninstalled. Report jobs contain pseudonymous customer hashes for repeat-customer counts; no customer contact details are returned by those reports. Reports and crawl results expire after 24 hours. The latest 100 extension activity records contain the acting WordPress user ID, time, action and limited scope. Temporary previews expire after ten minutes; result receipts expire after one hour. WordPress cron and database/cache cleanup affect when expired data is physically removed. Deactivation retains settings; uninstall removes site-local plugin data."
+msgstr ""
+
+#: build/regression.php:79
+#: includes/class-privacy.php:17
+#: includes/dashboard.php:57
+msgid "Google privacy policy"
+msgstr ""
+
+#: build/regression.php:94
+#: includes/class-core.php:11
+msgid "Commerce, reporting and SEO."
+msgstr ""
+
+#: build/regression.php:135
+#: build/regression.php:168
+#: build/regression.php:1029
+#: build/regression.php:1047
+#: build/regression.php:1201
+#: build/regression.php:1228
+#: includes/class-admin.php:44
+#: includes/class-admin.php:68
+#: includes/class-admin.php:76
+#: includes/class-core.php:52
+#: includes/class-core.php:85
+#: includes/class-google.php:46
+#: includes/class-google.php:67
+msgid "Access denied."
+msgstr ""
+
+#: build/regression.php:141
+#: includes/class-core.php:58
+msgid "Operation failed. Check the server error log or retry with a fresh preview."
+msgstr ""
+
+#: build/regression.php:149
+#: includes/class-core.php:66
+msgid "Connection and feature status"
+msgstr ""
+
+#: build/regression.php:149
+#: includes/class-core.php:66
+msgid "Read feature availability, installed dependencies and Google connection status. Never returns credentials."
+msgstr ""
+
+#: build/regression.php:150
+#: includes/class-core.php:67
+msgid "View extension change log"
+msgstr ""
+
+#: build/regression.php:150
+#: includes/class-core.php:67
+msgid "Latest 100 changes made by this extension only. This is not a full site activity log."
+msgstr ""
+
+#: build/regression.php:159
+#: includes/class-core.php:76
+msgid "Sales use WooCommerce. Traffic and Google rankings require direct Google authorization. No external WordPress analytics plugin is needed."
+msgstr ""
+
+#: build/regression.php:169
+#: includes/class-core.php:86
+msgid "Enable product/SEO/maintenance writes in Tools > MCP Capability Extender first."
+msgstr ""
+
+#: build/regression.php:175
+#: includes/class-core.php:92
+msgid "Review plan, then repeat identical request with dry_run=false and preview_token."
+msgstr ""
+
+#: build/regression.php:180
+#: includes/class-core.php:97
+msgid "Preview is missing, expired, changed, or the record has changed. Generate a new preview."
+msgstr ""
+
+#: build/regression.php:182
+#: includes/class-core.php:99
+msgid "Preview is already in use or was consumed. Generate a new preview."
+msgstr ""
+
+#: build/regression.php:197
+#: includes/class-core.php:114
+msgid "Resource is busy. Retry later."
+msgstr ""
+
+#: build/regression.php:199
+#: includes/class-core.php:116
+msgid "Resource is busy."
+msgstr ""
+
+#: build/regression.php:208
+#: includes/class-core.php:125
+msgid "Dates must be valid YYYY-MM-DD values."
+msgstr ""
+
+#: build/regression.php:210
+#: includes/class-core.php:127
+msgid "start_date must not be after end_date."
+msgstr ""
+
+#: build/regression.php:225
+#: includes/class-catalog.php:8
+msgid "Find products by category, name or SKU"
+msgstr ""
+
+#: build/regression.php:225
+#: includes/class-catalog.php:8
+msgid "Lists parent products with exact category filtering, attributes and inventory. Does not confuse a name search with category membership."
+msgstr ""
+
+#: build/regression.php:226
+#: includes/class-catalog.php:9
+msgid "Exact product category slug."
+msgstr ""
+
+#: build/regression.php:227
+#: includes/class-catalog.php:10
+msgid "Known category ID; do not also supply category."
+msgstr ""
+
+#: build/regression.php:228
+#: includes/class-catalog.php:11
+msgid "Default publish. all includes published, draft, pending, private and scheduled products; excludes trash."
+msgstr ""
+
+#: build/regression.php:230
+#: includes/class-catalog.php:13
+msgid "Optional compact response; id is always included."
+msgstr ""
+
+#: build/regression.php:233
+#: includes/class-catalog.php:16
+msgid "Read product or variation"
+msgstr ""
+
+#: build/regression.php:233
+#: includes/class-catalog.php:16
+msgid "Read main inventory SKU, attributes, defaults, prices and stock. Variable product prices are summaries; individual prices belong to variations."
+msgstr ""
+
+#: build/regression.php:234
+#: includes/class-catalog.php:17
+msgid "Read product variations"
+msgstr ""
+
+#: build/regression.php:234
+#: includes/class-catalog.php:17
+msgid "Lists size/colour options, variation IDs, individual SKUs, prices, Manage stock and stock quantities."
+msgstr ""
+
+#: build/regression.php:235
+#: includes/class-catalog.php:18
+msgid "List product categories"
+msgstr ""
+
+#: build/regression.php:235
+#: includes/class-catalog.php:18
+msgid "Search product categories and hierarchy, including empty categories."
+msgstr ""
+
+#: build/regression.php:236
+#: includes/class-catalog.php:19
+msgid "List global product attributes"
+msgstr ""
+
+#: build/regression.php:236
+#: includes/class-catalog.php:19
+msgid "Lists global attributes and taxonomy names. Use attribute-terms for values."
+msgstr ""
+
+#: build/regression.php:237
+#: includes/class-catalog.php:20
+msgid "List attribute values"
+msgstr ""
+
+#: build/regression.php:237
+#: includes/class-catalog.php:20
+msgid "Read available options for a global attribute, such as Size 44 or Colour Navy."
+msgstr ""
+
+#: build/regression.php:243
+#: build/regression.php:244
+#: includes/class-catalog.php:26
+#: includes/class-catalog.php:27
+msgid "ISO 8601 with timezone or empty to clear."
+msgstr ""
+
+#: build/regression.php:256
+#: includes/class-catalog.php:39
+msgid "For a variation only. Attribute taxonomy/name mapped to an existing parent option slug."
+msgstr ""
+
+#: build/regression.php:259
+#: includes/class-catalog.php:42
+msgid "Preview or update product inventory and attributes"
+msgstr ""
+
+#: build/regression.php:259
+#: includes/class-catalog.php:42
+msgid "Preserves product type. dry_run defaults true. Apply requires the returned preview token and unchanged record. Attributes merge by name; options replace the selected attribute values. Global options are existing term IDs expressed as strings. Category mode defaults append. Does not edit variable parent prices."
+msgstr ""
+
+#: build/regression.php:262
+#: includes/class-catalog.php:45
+msgid "Preview or edit up to 20 products or variations"
+msgstr ""
+
+#: build/regression.php:262
+#: includes/class-catalog.php:45
+msgid "Combined product and optional SEO content updates in one preview/save pair. Validates all items first, preserves types, then reads saved values back and returns per-item verification. Sequential, not transactional. Use product-bulk-result with the preview token if a response is lost."
+msgstr ""
+
+#: build/regression.php:267
+#: includes/class-catalog.php:50
+msgid "Replace product copy and SEO in batches"
+msgstr ""
+
+#: build/regression.php:267
+#: includes/class-catalog.php:50
+msgid "Preferred copy workflow: up to 20 products with descriptions and SEO title, meta description and focus_keyword together. Main product names, SKUs, prices, stock, categories and attributes cannot be supplied. Existing statuses are preserved. One preview/save pair with server-side read-back verification."
+msgstr ""
+
+#: build/regression.php:268
+#: includes/class-catalog.php:51
+msgid "Recover a bulk update result"
+msgstr ""
+
+#: build/regression.php:268
+#: includes/class-catalog.php:51
+msgid "Read the user-bound result receipt using the original preview_token after a lost response. Receipts last one hour. Incomplete/writing entries must be reconciled before retrying. Does not perform writes."
+msgstr ""
+
+#: build/regression.php:269
+#: includes/class-catalog.php:52
+msgid "Preview or create a variation"
+msgstr ""
+
+#: build/regression.php:269
+#: includes/class-catalog.php:52
+msgid "Creates one explicit variation using existing parent options. No automatic combinatorial explosion. SKU and prices validated. Preview token required."
+msgstr ""
+
+#: build/regression.php:274
+#: includes/class-catalog.php:57
+msgid "Preview or create category, attribute or option"
+msgstr ""
+
+#: build/regression.php:274
+#: includes/class-catalog.php:57
+msgid "Create a product category, a global attribute, or one term in an existing global attribute. No unrestricted taxonomy writes."
+msgstr ""
+
+#: build/regression.php:280
+#: includes/class-catalog.php:63
+msgid "WooCommerce is not active."
+msgstr ""
+
+#: build/regression.php:284
+#: includes/class-catalog.php:67
+msgid "Product not found or access denied."
+msgstr ""
+
+#: build/regression.php:318
+#: includes/class-catalog.php:101
+msgid "Use status or statuses, not both."
+msgstr ""
+
+#: build/regression.php:319
+#: includes/class-catalog.php:102
+msgid "Use category or category_id, not both."
+msgstr ""
+
+#: build/regression.php:326
+#: includes/class-catalog.php:109
+msgid "Category does not exist. Use categories first."
+msgstr ""
+
+#: build/regression.php:353
+#: includes/class-catalog.php:136
+msgid "Expected a variable parent product."
+msgstr ""
+
+#: build/regression.php:361
+#: includes/class-catalog.php:144
+msgid "Taxonomy is unavailable. Check WooCommerce and attribute ID."
+msgstr ""
+
+#: build/regression.php:376
+#: includes/class-catalog.php:159
+msgid "Attribute does not exist."
+msgstr ""
+
+#: build/regression.php:383
+#: includes/class-catalog.php:166
+msgid "Unknown or non-variation parent attribute: "
+msgstr ""
+
+#: build/regression.php:387
+#: includes/class-catalog.php:170
+msgid "Option must be an assigned parent term slug: "
+msgstr ""
+
+#: build/regression.php:392
+#: includes/class-catalog.php:175
+msgid "Option is not assigned to parent: "
+msgstr ""
+
+#: build/regression.php:395
+#: includes/class-catalog.php:178
+msgid "Explicit value required for every variation attribute: "
+msgstr ""
+
+#: build/regression.php:401
+#: includes/class-catalog.php:184
+msgid "Edit child prices by their IDs; variable or grouped parent type will be preserved."
+msgstr ""
+
+#: build/regression.php:403
+#: includes/class-catalog.php:186
+msgid "SKU is already assigned to another product."
+msgstr ""
+
+#: build/regression.php:404
+#: includes/class-catalog.php:187
+msgid "Categories and attribute definitions belong to the parent product."
+msgstr ""
+
+#: build/regression.php:410
+#: includes/class-catalog.php:193
+msgid "Sale dates must be ISO 8601 timestamps including timezone."
+msgstr ""
+
+#: build/regression.php:414
+#: includes/class-catalog.php:197
+msgid "Enable Manage stock to edit stock quantity."
+msgstr ""
+
+#: build/regression.php:416
+#: includes/class-catalog.php:199
+msgid "Sale price must not exceed the regular price."
+msgstr ""
+
+#: build/regression.php:417
+#: includes/class-catalog.php:200
+msgid "Sale end must not precede sale start."
+msgstr ""
+
+#: build/regression.php:419
+#: includes/class-catalog.php:202
+msgid "Category ID does not exist: "
+msgstr ""
+
+#: build/regression.php:427
+#: includes/class-catalog.php:210
+msgid "Global attribute ID does not exist."
+msgstr ""
+
+#: build/regression.php:429
+#: includes/class-catalog.php:212
+msgid "Custom attributes need a name without the reserved pa_ prefix."
+msgstr ""
+
+#: build/regression.php:433
+#: includes/class-catalog.php:216
+msgid "Global attribute options must be existing term IDs expressed as strings."
+msgstr ""
+
+#: build/regression.php:439
+#: includes/class-catalog.php:222
+msgid "Removing options or disabling Used for variations on an existing variable attribute requires manual review of its variations. Additions and visibility edits are supported."
+msgstr ""
+
+#: build/regression.php:447
+#: includes/class-catalog.php:230
+msgid "variation_attributes applies only to a variation."
+msgstr ""
+
+#: build/regression.php:452
+#: includes/class-catalog.php:235
+msgid "Another variation matches these options."
+msgstr ""
+
+#: build/regression.php:472
+#: includes/class-catalog.php:255
+msgid "Parent must be variable."
+msgstr ""
+
+#: build/regression.php:474
+#: includes/class-catalog.php:257
+msgid "This option combination already has a matching variation."
+msgstr ""
+
+#: build/regression.php:475
+#: includes/class-catalog.php:258
+msgid "SKU already exists."
+msgstr ""
+
+#: build/regression.php:484
+#: includes/class-catalog.php:267
+msgid "Copy updates accept id and at least one copy field only. Main product titles cannot be changed."
+msgstr ""
+
+#: build/regression.php:528
+#: includes/class-catalog.php:311
+msgid "Bulk receipt is unavailable, expired or belongs to another user."
+msgstr ""
+
+#: build/regression.php:538
+#: includes/class-catalog.php:321
+msgid "Duplicate product ID in bulk request."
+msgstr ""
+
+#: build/regression.php:543
+#: includes/class-catalog.php:326
+msgid "SEO content belongs to the parent product, not an individual variation."
+msgstr ""
+
+#: build/regression.php:553
+#: includes/class-catalog.php:336
+msgid "Bulk changes would create duplicate SKUs."
+msgstr ""
+
+#: build/regression.php:555
+#: includes/class-catalog.php:338
+msgid "Sequential saves with read-back verification, not a database transaction. A failed item may be partially written; no automatic rollback."
+msgstr ""
+
+#: build/regression.php:562
+#: includes/class-catalog.php:345
+msgid "Product write access is no longer available."
+msgstr ""
+
+#: build/regression.php:563
+#: includes/class-catalog.php:346
+msgid "Product access is no longer available."
+msgstr ""
+
+#: build/regression.php:564
+#: includes/class-catalog.php:347
+msgid "SEO access is no longer available."
+msgstr ""
+
+#: build/regression.php:590
+#: includes/class-catalog.php:373
+msgid "Existing attribute_id is required."
+msgstr ""
+
+#: build/regression.php:591
+#: includes/class-catalog.php:374
+msgid "Term slug already exists."
+msgstr ""
+
+#: build/regression.php:592
+#: includes/class-catalog.php:375
+msgid "Parent category does not exist."
+msgstr ""
+
+#: build/regression.php:596
+#: includes/class-catalog.php:379
+msgid "Use a new request before creating options; WooCommerce registers the new taxonomy on the next request."
+msgstr ""
+
+#: build/regression.php:609
+#: includes/class-reports.php:7
+msgid "Start a sales report"
+msgstr ""
+
+#: build/regression.php:609
+#: includes/class-reports.php:7
+msgid "Creates a resumable WooCommerce report. Does not send customer information to the AI. Period is order creation date in the store timezone; refunds are current lifetime refunds of that order cohort. Continue until complete before using totals."
+msgstr ""
+
+#: build/regression.php:610
+#: includes/class-reports.php:8
+msgid "Continue a sales report"
+msgstr ""
+
+#: build/regression.php:610
+#: includes/class-reports.php:8
+msgid "Processes up to 50 orders. Repeated calls accumulate totals without double counting committed batches. Reports expire in 24 hours. Current assignments determine categories; multi-category totals are non-additive."
+msgstr ""
+
+#: build/regression.php:611
+#: includes/class-reports.php:9
+msgid "Read a sales report"
+msgstr ""
+
+#: build/regression.php:611
+#: includes/class-reports.php:9
+msgid "Returns accumulated totals, top products, categories, variations and coupons. complete=false means totals are partial. No profit or traffic conversion claims."
+msgstr ""
+
+#: build/regression.php:612
+#: includes/class-reports.php:10
+msgid "Read paginated sales report details"
+msgstr ""
+
+#: build/regression.php:612
+#: includes/class-reports.php:10
+msgid "Fetch every product, variation, category or coupon row for exports. Currency groups remain separate. Report must be complete for final totals."
+msgstr ""
+
+#: build/regression.php:613
+#: includes/class-reports.php:11
+msgid "Read inventory and data quality"
+msgstr ""
+
+#: build/regression.php:613
+#: includes/class-reports.php:11
+msgid "Paginated parent products and variations with stock, missing SKU, missing prices and low-stock flags. Variable parent prices are excluded from missing-price checks."
+msgstr ""
+
+#: build/regression.php:626
+#: includes/class-reports.php:24
+msgid "Report expired or belongs to another user."
+msgstr ""
+
+#: build/regression.php:749
+#: includes/class-seo.php:7
+msgid "Audit a public page"
+msgstr ""
+
+#: build/regression.php:749
+#: includes/class-seo.php:7
+msgid "Independent HTML audit of titles, headings, metadata, canonical, robots, images, links, JSON-LD, HTTP redirects and mixed content. Same-origin public URLs only. Does not claim Google index status or browser/Core Web Vitals measurements."
+msgstr ""
+
+#: build/regression.php:750
+#: includes/class-seo.php:8
+msgid "Start a bounded site SEO audit"
+msgstr ""
+
+#: build/regression.php:750
+#: includes/class-seo.php:8
+msgid "Seeds a resumable crawl from published public content and product categories. Follows discovered same-origin links without query strings. Maximum 2000 pages; never a guarantee of exhaustive coverage."
+msgstr ""
+
+#: build/regression.php:751
+#: includes/class-seo.php:9
+msgid "Continue site SEO audit"
+msgstr ""
+
+#: build/regression.php:751
+#: includes/class-seo.php:9
+msgid "Fetches up to 3 pages per request. State is retained for 24 hours; rerun until complete. Read-only crawling. WordPress cron is not required."
+msgstr ""
+
+#: build/regression.php:752
+#: includes/class-seo.php:10
+msgid "Read site SEO audit"
+msgstr ""
+
+#: build/regression.php:752
+#: includes/class-seo.php:10
+msgid "Returns coverage, issues and duplicate-title/description/content candidates, plus paginated page details. Potential orphan detection is limited to crawled pages. Scores are not Google rankings."
+msgstr ""
+
+#: build/regression.php:753
+#: includes/class-seo.php:11
+msgid "Inspect robots.txt and sitemap entry points"
+msgstr ""
+
+#: build/regression.php:753
+#: includes/class-seo.php:11
+msgid "Fetches robots.txt and known sitemap entry points without modifying them. Reports WordPress search visibility and available SEO integration."
+msgstr ""
+
+#: build/regression.php:754
+#: includes/class-seo.php:12
+msgid "Read saved SEO metadata"
+msgstr ""
+
+#: build/regression.php:754
+#: includes/class-seo.php:12
+msgid "Reads supported Yoast or Rank Math saved fields, not a ranking score. With no SEO plugin, reports unavailable; crawl rendered output independently."
+msgstr ""
+
+#: build/regression.php:755
+#: includes/class-seo.php:13
+msgid "Preview or edit supported SEO metadata"
+msgstr ""
+
+#: build/regression.php:755
+#: includes/class-seo.php:13
+msgid "Writes saved fields only for active Yoast or Rank Math. No native frontend SEO output is added in this version. Verify rendered page afterward."
+msgstr ""
+
+#: build/regression.php:759
+#: includes/class-seo.php:17
+msgid "Preview or edit media alt text"
+msgstr ""
+
+#: build/regression.php:759
+#: includes/class-seo.php:17
+msgid "Updates an image attachment alt field, with permission and stale-record checks."
+msgstr ""
+
+#: build/regression.php:767
+#: includes/class-seo.php:25
+msgid "Only the exact home_url origin is allowed."
+msgstr ""
+
+#: build/regression.php:770
+#: includes/class-seo.php:28
+msgid "Unsafe public page path."
+msgstr ""
+
+#: build/regression.php:771
+#: includes/class-seo.php:29
+msgid "Only public pages without query strings are crawled."
+msgstr ""
+
+#: build/regression.php:791
+#: includes/class-seo.php:49
+msgid "More than three redirects or redirect loop."
+msgstr ""
+
+#: build/regression.php:795
+#: includes/class-seo.php:53
+msgid "PHP DOM extension is needed for HTML SEO audits."
+msgstr ""
+
+#: build/regression.php:798
+#: includes/class-seo.php:56
+msgid "Page HTML could not be parsed."
+msgstr ""
+
+#: build/regression.php:875
+#: includes/class-seo.php:133
+msgid "Crawl expired or belongs to another user."
+msgstr ""
+
+#: build/regression.php:924
+#: includes/class-seo.php:182
+msgid "Post not found or access denied."
+msgstr ""
+
+#: build/regression.php:926
+#: includes/class-seo.php:184
+msgid "Saved metadata may contain templates. Rendered HTML is the authoritative output."
+msgstr ""
+
+#: build/regression.php:934
+#: includes/class-seo.php:192
+msgid "SEO edits require edit_others_posts."
+msgstr ""
+
+#: build/regression.php:935
+#: includes/class-seo.php:193
+msgid "SEO content accepts only title, description and focus_keyword."
+msgstr ""
+
+#: build/regression.php:938
+#: includes/class-seo.php:196
+msgid "No supported SEO plugin active. Content-only edits remain available."
+msgstr ""
+
+#: build/regression.php:941
+#: includes/class-seo.php:199
+msgid "SEO content values must be strings."
+msgstr ""
+
+#: build/regression.php:949
+#: includes/class-seo.php:207
+msgid "SEO access denied."
+msgstr ""
+
+#: build/regression.php:950
+#: includes/class-seo.php:208
+msgid "SEO provider changed. Generate a fresh preview."
+msgstr ""
+
+#: build/regression.php:968
+#: includes/class-seo.php:226
+msgid "No supported SEO plugin active. Independent audits work, but native SEO output is not implemented in this release."
+msgstr ""
+
+#: build/regression.php:970
+#: includes/class-seo.php:228
+msgid "Canonical must be a public HTTP(S) URL or empty."
+msgstr ""
+
+#: build/regression.php:978
+#: includes/class-seo.php:236
+msgid "Image not found or access denied."
+msgstr ""
+
+#: build/regression.php:991
+#: includes/class-google.php:8
+msgid "List authorized Google properties"
+msgstr ""
+
+#: build/regression.php:991
+#: includes/class-google.php:8
+msgid "Lists GA4 account/property summaries and Search Console sites using direct read-only authorization. Does not depend on Site Kit."
+msgstr ""
+
+#: build/regression.php:992
+#: includes/class-google.php:9
+msgid "Read direct GA4 analytics report"
+msgstr ""
+
+#: build/regression.php:992
+#: includes/class-google.php:9
+msgid "Uses the configured GA4 property. Presets avoid incompatible item/session metric combinations. Returns provider metadata, row count and pagination. Requires existing GA4 tracking and authorization; does not install tracking."
+msgstr ""
+
+#: build/regression.php:996
+#: includes/class-google.php:13
+msgid "Read direct Google search performance"
+msgstr ""
+
+#: build/regression.php:996
+#: includes/class-google.php:13
+msgid "Clicks, impressions, CTR and average position by selected dimensions. Provider may return top rows only and omit anonymized queries. Pagination is not a guarantee of complete data."
+msgstr ""
+
+#: build/regression.php:1001
+#: includes/class-google.php:18
+msgid "Inspect URL Google index status"
+msgstr ""
+
+#: build/regression.php:1001
+#: includes/class-google.php:18
+msgid "Uses Google URL Inspection for the configured Search Console property. This reads indexed status, not a live test or indexing request."
+msgstr ""
+
+#: build/regression.php:1002
+#: includes/class-google.php:19
+msgid "Read Search Console sitemaps"
+msgstr ""
+
+#: build/regression.php:1002
+#: includes/class-google.php:19
+msgid "Lists submitted sitemaps and provider status. Read-only."
+msgstr ""
+
+#: build/regression.php:1003
+#: includes/class-google.php:20
+msgid "Run mobile or desktop Lighthouse audit"
+msgstr ""
+
+#: build/regression.php:1003
+#: includes/class-google.php:20
+msgid "Sends one public site URL to Google PageSpeed Insights. May need an API key/quota. Lab results are not field Core Web Vitals. The API key is configured only in WordPress settings."
+msgstr ""
+
+#: build/regression.php:1004
+#: includes/class-google.php:21
+msgid "Read real-user Core Web Vitals"
+msgstr ""
+
+#: build/regression.php:1004
+#: includes/class-google.php:21
+msgid "Queries CrUX directly. Requires a configured Google API key and sufficient eligible traffic. Missing data is not a failing performance score."
+msgstr ""
+
+#: build/regression.php:1007
+#: includes/class-google.php:24
+msgid "PHP OpenSSL is required for encrypted credentials."
+msgstr ""
+
+#: build/regression.php:1010
+#: includes/class-google.php:27
+msgid "Credential encryption failed."
+msgstr ""
+
+#: build/regression.php:1025
+#: includes/class-google.php:42
+msgid "Presence of tokens does not prove provider permissions; call a report to verify."
+msgstr ""
+
+#: build/regression.php:1031
+#: includes/class-google.php:48
+msgid "Save a Google OAuth client ID and secret first."
+msgstr ""
+
+#: build/regression.php:1041
+#: includes/class-google.php:61
+msgid "Google token request failed. Check outbound HTTPS and OAuth configuration."
+msgstr ""
+
+#: build/regression.php:1043
+#: includes/class-google.php:63
+msgid "Google rejected authorization. Verify credentials, redirect URI, enabled APIs and consent; reconnect if authorization expired."
+msgstr ""
+
+#: build/regression.php:1049
+#: includes/class-google.php:71
+msgid "Google connection was declined, expired, or failed state validation. Start again from MCP Capability Extender settings."
+msgstr ""
+
+#: build/regression.php:1053
+#: includes/class-google.php:76
+msgid "Google did not issue offline authorization. Revoke the previous app grant and connect again."
+msgstr ""
+
+#: build/regression.php:1064
+#: includes/class-google.php:87
+msgid "Connect Google in Tools > MCP Capability Extender first."
+msgstr ""
+
+#: build/regression.php:1074
+#: includes/class-google.php:97
+msgid "Unapproved Google endpoint."
+msgstr ""
+
+#: build/regression.php:1082
+#: includes/class-google.php:105
+msgid "Provider request failed. Check outbound HTTPS and retry."
+msgstr ""
+
+#: build/regression.php:1084
+#: includes/class-google.php:107
+msgid "Provider HTTP "
+msgstr ""
+
+#: build/regression.php:1085
+#: includes/class-google.php:108
+msgid "Provider returned invalid or truncated JSON. Reduce report size."
+msgstr ""
+
+#: build/regression.php:1094
+#: includes/class-google.php:117
+msgid "Configure the numeric GA4 property ID, not the G- measurement ID."
+msgstr ""
+
+#: build/regression.php:1112
+#: includes/class-google.php:135
+msgid "Use response currencyCode/timeZone and metadata. GA4 is not an order ledger; consent, blockers, attribution and refunds can cause differences. Event counts are not a user-level funnel."
+msgstr ""
+
+#: build/regression.php:1115
+#: includes/class-google.php:138
+msgid "Configure the exact Search Console property identifier."
+msgstr ""
+
+#: build/regression.php:1121
+#: includes/class-google.php:144
+msgid "Finalized data only, provider timezone and aggregation. Anonymized queries and provider row limits mean rows may not equal totals."
+msgstr ""
+
+#: build/regression.php:1126
+#: includes/class-google.php:149
+msgid "Indexed version, not a live crawl test."
+msgstr ""
+
+#: build/regression.php:1145
+#: includes/class-google.php:168
+msgid "Lab performance, not real-user INP. Use sternlabs/crux for field data. Cached for 1 hour."
+msgstr ""
+
+#: build/regression.php:1150
+#: includes/class-google.php:173
+msgid "Configure a Google API key with Chrome UX Report API enabled."
+msgstr ""
+
+#: build/regression.php:1153
+#: includes/class-google.php:176
+msgid "No eligible URL field data returned. This is not a performance failure."
+msgstr ""
+
+#: build/regression.php:1176
+#: includes/class-admin.php:19
+msgid "MCP Capability Extender requires WordPress 6.9+ Abilities API and an MCP adapter to expose tools."
+msgstr ""
+
+#: build/regression.php:1180
+#: includes/class-admin.php:23
+msgid "List installed plugins and available updates"
+msgstr ""
+
+#: build/regression.php:1180
+#: includes/class-admin.php:23
+msgid "Reads WordPress plugin update information. Optional refresh contacts update providers. Premium availability depends on licenses."
+msgstr ""
+
+#: build/regression.php:1181
+#: includes/class-admin.php:24
+msgid "Preview or update one plugin"
+msgstr ""
+
+#: build/regression.php:1181
+#: includes/class-admin.php:24
+msgid "Preview-token protected WordPress updater. YITH plugins are excluded. Does not promise a backup or automatic rollback. Use a tested backup and staging first."
+msgstr ""
+
+#: build/regression.php:1194
+#: includes/class-admin.php:37
+msgid "Successful"
+msgstr ""
+
+#: build/regression.php:1194
+#: includes/class-admin.php:37
+msgid "Failed"
+msgstr ""
+
+#: build/regression.php:1194
+#: includes/class-admin.php:37
+msgid "Partial or failed"
+msgstr ""
+
+#: build/regression.php:1195
+#: includes/class-admin.php:38
+msgid "Recorded"
+msgstr ""
+
+#: build/regression.php:1204
+#: includes/class-admin.php:47
+msgid "Invalid settings section."
+msgstr ""
+
+#: build/regression.php:1211
+#: build/regression.php:1237
+#: includes/class-admin.php:82
+msgid "Invalid settings field."
+msgstr ""
+
+#: build/regression.php:1217
+#: includes/class-admin.php:57
+msgid "Use the numeric GA4 property ID."
+msgstr ""
+
+#: build/regression.php:1219
+#: includes/class-admin.php:59
+msgid "Enter the exact property identifier from Google Search Console."
+msgstr ""
+
+#: build/regression.php:1222
+#: includes/class-admin.php:62
+msgid "Credentials could not be encrypted. Check PHP OpenSSL support."
+msgstr ""
+
+#: build/regression.php:1257
+#: includes/class-admin.php:102
+msgid "Update availability comes from WordPress/provider caches. Premium packages may require an active license."
+msgstr ""
+
+#: build/regression.php:1261
+#: includes/class-admin.php:106
+msgid "Multisite updates require a super administrator."
+msgstr ""
+
+#: build/regression.php:1262
+#: includes/class-admin.php:107
+msgid "File modifications are disabled by WordPress configuration."
+msgstr ""
+
+#: build/regression.php:1265
+#: includes/class-admin.php:110
+msgid "Plugin missing, excluded (YITH), no update, or update package unavailable."
+msgstr ""
+
+#: build/regression.php:1266
+#: includes/class-admin.php:111
+msgid "This directory build updates WordPress.org packages only. Use the plugin provider update screen for other sources."
+msgstr ""
+
+#: build/regression.php:1270
+#: includes/class-admin.php:115
+msgid "Update package is not from WordPress.org."
+msgstr ""
+
+#: build/regression.php:1276
+#: includes/class-admin.php:121
+msgid "WordPress did not complete the update. Check filesystem access and updater errors."
+msgstr ""
+
+#: includes/dashboard.php:6
+#: includes/dashboard.php:23
+msgid "Not detected"
+msgstr ""
+
+#: includes/dashboard.php:6
+msgid "Yoast detected"
+msgstr ""
+
+#: includes/dashboard.php:6
+msgid "Rank Math detected"
+msgstr ""
+
+#: includes/dashboard.php:11
+msgid "Manage your connection, permissions and reporting."
+msgstr ""
+
+#: includes/dashboard.php:15
+msgid "Settings saved."
+msgstr ""
+
+#: includes/dashboard.php:16
+msgid "Dashboard sections"
+msgstr ""
+
+#: includes/dashboard.php:16
+msgid "Overview"
+msgstr ""
+
+#: includes/dashboard.php:16
+msgid "Connections"
+msgstr ""
+
+#: includes/dashboard.php:16
+msgid "Activity"
+msgstr ""
+
+#: includes/dashboard.php:16
+msgid "Settings"
+msgstr ""
+
+#: includes/dashboard.php:18
+msgid "Plugin active"
+msgstr ""
+
+#: includes/dashboard.php:19
+msgid "WordPress abilities available"
+msgstr ""
+
+#: includes/dashboard.php:19
+msgid "WordPress abilities unavailable"
+msgstr ""
+
+#: includes/dashboard.php:19
+msgid "External MCP access is verified from your AI client."
+msgstr ""
+
+#: includes/dashboard.php:20
+msgid "View technical details"
+msgstr ""
+
+#: includes/dashboard.php:23
+msgid "Available"
+msgstr ""
+
+#: includes/dashboard.php:23
+msgid "Products, inventory and sales"
+msgstr ""
+
+#: includes/dashboard.php:24
+msgid "SEO integration"
+msgstr ""
+
+#: includes/dashboard.php:24
+msgid "Product SEO fields"
+msgstr ""
+
+#: includes/dashboard.php:25
+#: includes/dashboard.php:40
+msgid "Google reporting"
+msgstr ""
+
+#: includes/dashboard.php:25
+msgid "Authorization saved"
+msgstr ""
+
+#: includes/dashboard.php:25
+msgid "Setup required"
+msgstr ""
+
+#: includes/dashboard.php:25
+msgid "Run a report to verify access"
+msgstr ""
+
+#: includes/dashboard.php:25
+msgid "Connect Google to enable reports"
+msgstr ""
+
+#: includes/dashboard.php:29
+msgid "Permissions & security"
+msgstr ""
+
+#: includes/dashboard.php:29
+msgid "Your existing workflow, with stronger protection."
+msgstr ""
+
+#: includes/dashboard.php:33
+msgid "Allow changes"
+msgstr ""
+
+#: includes/dashboard.php:33
+msgid "Authorized users can edit products, SEO and run maintenance."
+msgstr ""
+
+#: includes/dashboard.php:34
+msgid "WordPress permission checks"
+msgstr ""
+
+#: includes/dashboard.php:34
+msgid "Single-use protected preview tokens"
+msgstr ""
+
+#: includes/dashboard.php:34
+msgid "Input validation and request limits"
+msgstr ""
+
+#: includes/dashboard.php:34
+msgid "Verified saved results for bulk product edits"
+msgstr ""
+
+#: includes/dashboard.php:35
+msgid "Checks run automatically in the background."
+msgstr ""
+
+#: includes/dashboard.php:36
+msgid "Save permissions"
+msgstr ""
+
+#: includes/dashboard.php:40
+msgid "Connect your own Google account for Analytics and Search Console reports."
+msgstr ""
+
+#: includes/dashboard.php:41
+msgid "Google Analytics 4"
+msgstr ""
+
+#: includes/dashboard.php:41
+#: includes/dashboard.php:42
+msgid "Configured - not verified"
+msgstr ""
+
+#: includes/dashboard.php:41
+#: includes/dashboard.php:42
+msgid "Authorization required"
+msgstr ""
+
+#: includes/dashboard.php:41
+#: includes/dashboard.php:42
+msgid "Property required"
+msgstr ""
+
+#: includes/dashboard.php:42
+msgid "Search Console"
+msgstr ""
+
+#: includes/dashboard.php:43
+msgid "PageSpeed Insights"
+msgstr ""
+
+#: includes/dashboard.php:43
+msgid "API key saved"
+msgstr ""
+
+#: includes/dashboard.php:43
+msgid "API key not configured"
+msgstr ""
+
+#: includes/dashboard.php:44
+msgid "Reconnect Google"
+msgstr ""
+
+#: includes/dashboard.php:44
+msgid "Connect Google"
+msgstr ""
+
+#: includes/dashboard.php:45
+msgid "Configure credentials"
+msgstr ""
+
+#: includes/dashboard.php:46
+msgid "Disconnect Google"
+msgstr ""
+
+#: includes/dashboard.php:49
+msgid "Recent activity"
+msgstr ""
+
+#: includes/dashboard.php:49
+msgid "Latest actions recorded by this extension. Existing entries may have limited detail."
+msgstr ""
+
+#: includes/dashboard.php:50
+msgid "Action"
+msgstr ""
+
+#: includes/dashboard.php:50
+msgid "Scope"
+msgstr ""
+
+#: includes/dashboard.php:50
+msgid "Result"
+msgstr ""
+
+#: includes/dashboard.php:50
+msgid "Time (UTC)"
+msgstr ""
+
+#: includes/dashboard.php:51
+msgid "No recorded activity yet."
+msgstr ""
+
+#. translators: %s: Number of products affected by an operation.
+#: includes/dashboard.php:52
+#, php-format
+msgid "%s product"
+msgid_plural "%s products"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %s: Number of products affected by an operation.
+#: includes/dashboard.php:52
+msgid "Site operation"
+msgstr ""
+
+#. translators: %s: Number of products affected by an operation.
+#: includes/dashboard.php:52
+msgid "Product IDs"
+msgstr ""
+
+#. translators: %s: Number of products affected by an operation.
+#: includes/dashboard.php:53
+msgid "Latest 100 extension changes retained. This is not a complete WordPress activity log."
+msgstr ""
+
+#: includes/dashboard.php:55
+msgid "Google credentials & reporting settings"
+msgstr ""
+
+#: includes/dashboard.php:56
+msgid "Use your own Google Cloud OAuth client with Analytics Data, Analytics Admin and Search Console APIs enabled. Access is read-only. Existing analytics tracking is required for traffic reports."
+msgstr ""
+
+#: includes/dashboard.php:56
+msgid "Authorized redirect URI:"
+msgstr ""
+
+#: includes/dashboard.php:57
+msgid "Saving Google settings, connecting your account and requesting reports authorizes the corresponding Google service requests described in the plugin readme. These features are optional; product tools and sales reports work without Google."
+msgstr ""
+
+#: includes/dashboard.php:57
+msgid "Google API terms"
+msgstr ""
+
+#: includes/dashboard.php:59
+msgid "Google OAuth client ID"
+msgstr ""
+
+#: includes/dashboard.php:59
+msgid "Google OAuth client secret"
+msgstr ""
+
+#: includes/dashboard.php:59
+msgid "Performance API key"
+msgstr ""
+
+#: includes/dashboard.php:59
+msgid "Numeric GA4 property ID"
+msgstr ""
+
+#: includes/dashboard.php:59
+msgid "Search Console property"
+msgstr ""
+
+#: includes/dashboard.php:60
+msgid "Blank secret and API key fields keep saved values. PageSpeed and CrUX require their Google APIs and sufficient quota. Google authorization may need renewal."
+msgstr ""
+
+#: includes/dashboard.php:60
+msgid "Save reporting settings"
+msgstr ""
+
+#: includes/dashboard.php:62
+msgid "Connection help & data retention"
+msgstr ""
+
+#: includes/dashboard.php:62
+msgid "Keep your existing MCP adapter server URL and credentials. After updating, reconnect your AI client if its tool list is cached. The dashboard cannot prove an external client is connected."
+msgstr ""
+
+#: includes/dashboard.php:62
+msgid "Reports and crawls expire after 24 hours, previews after 10 minutes, bulk result receipts and performance caches after one hour. Hourly cleanup removes expired local security data when WordPress cron runs. Google credentials are encrypted using WordPress salts; changing salts requires reconnecting Google."
+msgstr ""
+
+#: includes/dashboard.php:62
+msgid "Changes are sequential and have no automatic rollback. Maintain tested backups. Disabling writes affects this extension only."
+msgstr ""
+
+#: includes/dashboard.php:63
+msgid "Built by Stern Labs"
+msgstr ""

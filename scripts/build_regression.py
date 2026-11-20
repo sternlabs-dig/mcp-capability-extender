@@ -4,9 +4,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 NAMESPACE = 'SternLabs\\CapabilityExtender030QA'
 parts = []
-for name in ['security', 'core', 'catalog', 'reports', 'seo', 'google', 'admin']:
+for name in ['security', 'privacy', 'core', 'catalog', 'reports', 'seo', 'google', 'admin']:
     text = (ROOT / 'includes' / ('class-' + name + '.php')).read_text(encoding='utf-8').removeprefix('<?php')
     if name == 'seo':
+        text = text.replace("function_exists('YoastSEO')", "function_exists(__NAMESPACE__ . '\\\\YoastSEO')")
         start = text.index('    public static function provider()')
         end = text.index('\n', start)
         text = text[:start] + "    public static function provider() { return $GLOBALS['ce_provider'] ?? 'yoast'; }" + text[end:]

@@ -11,15 +11,15 @@ def collect(root):
     root = Path(root)
     header = (root / ENTRY).read_text(encoding='utf-8')
     readme = (root / 'readme.txt').read_text(encoding='utf-8')
-    version = re.search(r'^\s*\* Version:\s*([0-9]+\.[0-9]+\.[0-9]+)\s*$', header, re.M)
+    version = re.search(r'^\s*\* Version:\s*([0-9]+\.[0-9]+(?:\.[0-9]+)?)\s*$', header, re.M)
     constant = re.search(r"define\('SCI_VERSION', '([^']+)'\)", header)
     stable = re.search(r'^Stable tag:\s*(\S+)\s*$', readme, re.M)
     if not version or not constant or not stable or len({version[1], constant[1], stable[1]}) != 1:
         raise ValueError('Plugin header, SCI_VERSION and readme stable tag must match.')
-    required = [ENTRY, 'uninstall.php', 'readme.txt', 'LICENSE', 'ASSETS.md']
-    required += ['includes/class-' + module + '.php' for module in ['security', 'core', 'catalog', 'reports', 'seo', 'google', 'admin']]
-    required += ['includes/dashboard.php', 'assets/dashboard.css', 'assets/dashboard.js', 'assets/sternlabs-logo.png']
-    paths = required + [name for name in ['INSTALL.md', 'FEATURES.md'] if (root / name).is_file()]
+    required = [ENTRY, 'uninstall.php', 'readme.txt', 'LICENSE', 'assets/LICENSE.txt', 'external-services.txt']
+    required += ['includes/class-' + module + '.php' for module in ['security', 'privacy', 'core', 'catalog', 'reports', 'seo', 'google', 'admin']]
+    required += ['includes/dashboard.php', 'assets/dashboard.css', 'assets/dashboard.js', 'assets/sternlabs-logo.png', 'languages/sternlabs-commerce-seo.pot']
+    paths = required
     files = []
     for name in paths:
         path = root / name

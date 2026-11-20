@@ -2,7 +2,24 @@
 
 Status: not submitted/approved based on the maintainer's current information. GitHub setup does not establish directory compliance.
 
-## Required review before submission
+## Completed for 0.4.0
+
+- Official Plugin Check 2.2.0 passed with runtime checks on WordPress 7.1.4 / PHP 8.2.29.
+- Added UI/tool/error translations, output escaping, translation template and privacy-policy guidance.
+- Documented optional services, request data, conditions, terms and privacy links.
+- Restricted maintenance downloads to WordPress.org packages; no self-updater is bundled.
+- Added scalar form validation and a scoped Google authorization redirect allowlist.
+- Maintainer confirmed logo ownership/distribution authority and GPL v2-or-later permission; notice ships with the image.
+- Added official Plugin Check to GitHub checks, prepared locally pending source upload.
+- Verified production ZIP, six packaging tests, 280 functional assertions and a real disposable WooCommerce copy update.
+
+## Remaining before submission
+
+- Obtain the actual WordPress.org contributor username. None has been supplied; no account name is assumed.
+- Confirm proposed/approved slug and upgrade path. Existing folder/text domain remain sternlabs-commerce-seo for manual in-place updates.
+- Establish a private security reporting route, complete relevant staging checks and follow reviewer feedback.
+
+## Ongoing review checklist
 
 - Run the official Plugin Check tool and address relevant findings. Record versions, full results and explanations for genuine false positives. PHP syntax/package checks in CI do not replace Plugin Check.
 - Complete translation coverage for visible labels, notices and errors using literal text domains and suitable escaping.

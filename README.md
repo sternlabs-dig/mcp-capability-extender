@@ -2,7 +2,7 @@
 
 WordPress MCP tools for WooCommerce, SEO and reporting, maintained by Stern Labs.
 
-**Current baseline: 0.3.0. WordPress.org submission and approval are pending.** This repository is the development source, not a WordPress.org listing. No GitHub-to-WordPress.org deployment is enabled yet.
+**Current baseline: 1.1. WordPress.org submission and approval are pending.** This repository is the development source, not a WordPress.org listing. No GitHub-to-WordPress.org deployment is enabled yet.
 
 ## Features
 
@@ -12,7 +12,7 @@ WordPress MCP tools for WooCommerce, SEO and reporting, maintained by Stern Labs
 - WooCommerce sales and inventory reports, public-page HTML SEO audits and optional direct Google reports.
 - Responsive admin dashboard with local Stern Labs branding and background security controls.
 
-Read [FEATURES.md](FEATURES.md) and [INSTALL.md](INSTALL.md) for implemented features and limitations. This does not install an MCP transport or visitor tracking. Yoast or Rank Math is needed for supported saved SEO metadata; Google reporting requires your own account authorization and existing analytics tracking.
+Read [FEATURES.md](FEATURES.md) and [INSTALL.md](INSTALL.md) for implemented features and limitations. This does not install an MCP transport or visitor tracking. Yoast or Rank Math is needed for supported saved SEO metadata; Google reporting requires your own account authorization and existing analytics tracking. See [EXTERNAL-SERVICES.md](EXTERNAL-SERVICES.md) for service destinations, data and retention. Maintenance downloads are limited to WordPress.org packages.
 
 ## Requirements
 
@@ -23,7 +23,7 @@ Read [FEATURES.md](FEATURES.md) and [INSTALL.md](INSTALL.md) for implemented fea
 
 ## Build and install
 
-Run `python3 scripts/build_zip.py` from a checkout. It creates `dist/mcp-capability-extender-0.3.0.zip` using the version declared in the plugin header. Upload the resulting ZIP through WordPress's plugin uploader and use its replacement flow for an existing installation.
+Run `python3 scripts/build_zip.py` from a checkout. It creates `dist/mcp-capability-extender-1.1.zip` using the version declared in the plugin header. Upload the resulting ZIP through WordPress's plugin uploader and use its replacement flow for an existing installation.
 
 The ZIP preserves the existing `sternlabs-commerce-seo/` directory and `sternlabs-commerce-seo.php` entry. **Do not install GitHub's automatic source archive as an update:** its wrapper folder can differ. Existing MCP ability names and settings are deliberately retained. Do not delete the installed plugin before replacing it, as uninstall removes its data.
 
@@ -31,7 +31,7 @@ The ZIP preserves the existing `sternlabs-commerce-seo/` directory and `sternlab
 
 1. Create a branch and make changes.
 2. Run syntax and packaging checks; test on staging and run the regression fixtures in a WordPress/WooCommerce test environment.
-3. Open a pull request. GitHub Actions checks PHP syntax on 8.1 and 8.3, JavaScript syntax and ZIP packaging. These checks do not replace installed-site or security tests.
+3. Open a pull request. GitHub Actions checks PHP syntax on 8.1 and 8.3, JavaScript syntax, ZIP packaging and official Plugin Check against production files. These checks do not replace installed-site or security tests.
 4. For a release, increment the plugin header, `SCI_VERSION`, readme stable tag and changelog together.
 5. Build and verify the ZIP before release.
 
@@ -45,8 +45,8 @@ See [the submission checklist](docs/WORDPRESS-ORG.md) and [release setup](docs/R
 
 No visitor tracking or remote dashboard assets are installed. Requested product/report/audit data is returned to the authorized AI client. Google requests and data retention are described in [readme.txt](readme.txt). Use a dedicated least-privilege account and revocable application passwords. Never commit site configuration, database exports, real customer reports, passwords, tokens, private keys or Google credentials.
 
-See [SECURITY.md](SECURITY.md). Previous isolated 0.3.0 regression validation passed 268 assertions; see [TESTING.md](TESTING.md). That is not independent security certification or a current WordPress.org Plugin Check result.
+See [SECURITY.md](SECURITY.md). Version 0.4.0 passed official Plugin Check 2.2.0, 280 isolated functional assertions, six packaging tests and a real disposable WooCommerce copy-update smoke test. See [TESTING.md](TESTING.md) for scope and limitations. Directory approval and an independent security audit remain separate.
 
 ## Licence
 
-Plugin code is licensed under GNU GPL version 2 or, at your option, any later version (SPDX `GPL-2.0-or-later`). [LICENSE](LICENSE) contains the unmodified GPL v2 text. Asset licensing and trademark documentation must be completed before directory submission; see [ASSETS.md](ASSETS.md).
+Plugin code is licensed under GNU GPL version 2 or, at your option, any later version (SPDX `GPL-2.0-or-later`). [LICENSE](LICENSE) contains the unmodified GPL v2 text. The supplied logo licence is documented in [ASSETS.md](ASSETS.md).

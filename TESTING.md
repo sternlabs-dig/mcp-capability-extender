@@ -1,3 +1,16 @@
+# Version 0.4.0 validation — 19 November 2026
+
+- Official Plugin Check 2.2.0: no errors or warnings on the production package in isolated WordPress 7.1.4 / PHP 8.2.29, with runtime bootstrap. This is not directory approval or independent security certification.
+- Six packaging tests passed, including exact file inventory, reproducibility, version consistency, licence presence and exclusion of development/site data.
+- Isolated functional harness passed 280 assertions. Yoast/Rank Math providers and the indexable builder use fixtures; these are not end-to-end tests with the real SEO plugins installed.
+- Real WooCommerce 11.3.0 smoke test passed: draft product, preview, replacement description save, read-back, preservation of main name/SKU/status/price/stock and replay rejection. The disposable product was deleted afterward.
+- Activation, admin dashboard rendering and graceful status without WooCommerce passed locally. PHP syntax checks passed on shipped PHP; JavaScript syntax passed.
+- Google authorization, remote reports, actual plugin upgrades, multisite cleanup and persistent external-cache behavior remain staging acceptance checks. Outbound requests were blocked locally. No production data was used or changed.
+- Narrow PHPCS annotations document OAuth state/PKCE verification, display-only notices, validated punctuation-preserving secrets and prepared plugin-owned cleanup queries. No blanket rule exclusions were used.
+- GitHub checks now include pinned official Plugin Check against the production build. The updated workflow has not run on GitHub because the connected integration cannot write this repository.
+
+Historical validation follows; its deployment limitations apply to earlier releases.
+
 # Validation record and staging checks
 
 ## Repository checks
